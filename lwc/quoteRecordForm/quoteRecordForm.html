@@ -1,0 +1,35 @@
+<template>
+    <div if:true={table}>
+        <lightning-card>
+            <div class="slds-clearfix slds-var-m-bottom_medium slds-var-m-right_large">
+                <lightning-button variant="brand" label="New Quote" onclick={handleNewQuote} class="slds-float_right"></lightning-button>
+            </div>
+            <div class="newContact slds-var-m-around_large">
+                <lightning-datatable
+                    key-field="id"
+                    data={quotes}
+                    columns={columns}>
+                </lightning-datatable>
+            </div>
+            <div class="slds-clearfix slds-var-m-bottom-large">
+                <lightning-button variant="brand outline" label="Navigate to quote" onclick={handleNavigation} class="slds-align_absolute-center"></lightning-button>
+            </div>
+        </lightning-card>
+    </div>
+    <div if:false={table}>
+        <lightning-card>
+            <div class="slds-clearfix slds-var-p-left_large slds-var-p-right_large slds-var-p-bottom_large">
+                <lightning-button variant="brand" label="Back" onclick={handleback} class="slds-float_right"></lightning-button>
+            </div>
+            <div>
+                <lightning-record-form 
+                    object-api-name="SBQQ__Quote__c" 
+                    columns="2"
+                    fields={fields}
+                    onsubmit={handleSubmit}
+                    mode="edit">
+                </lightning-record-form>
+            </div>    
+        </lightning-card>
+    </div>    
+</template>

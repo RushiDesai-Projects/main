@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Onboard Merchant" icon-name= "custom:custom26" class="slds-modal__header slds-modal__close"> 
+        <div class="slds-clearfix slds-var-p-bottom_xx-small slds-var-p-right_large">
+            <lightning-button variant="Brand" label="Back" onclick={handleBackAction} class="slds-float_right"></lightning-button>
+        </div>
+        <div>
+            <lightning-tabset variant="vertical">
+                <lightning-tab label="Account" style="height: 350px;">
+                    <template if:true={recordId}>
+                        <c-account-record-form oppty-id ={recordId}></c-account-record-form>
+                    </template>
+                </lightning-tab>
+                <lightning-tab label="Contacts" style="height: 350px;">
+                    <div>
+                        <c-contacts-record-form oppty-id ={recordId} contacts={contacts}></c-contacts-record-form>
+                    </div>                
+                </lightning-tab>
+                <lightning-tab label="Quote" style="height: 350px;">
+                    <div>
+                        <c-quote-record-form oppty-id ={recordId} ></c-quote-record-form>
+                    </div>                  
+                </lightning-tab>
+                <lightning-tab label="Submit" style="height: 350px;">
+                    <div>
+                        <c-submit-form></c-submit-form>
+                    </div>                  
+                </lightning-tab>
+            </lightning-tabset>
+        </div>
+    </lightning-card>
+</template>

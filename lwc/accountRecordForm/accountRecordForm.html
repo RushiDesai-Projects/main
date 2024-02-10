@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <div class="slds-var-p-left_large slds-var-p-right_large slds-var-p-bottom_large"> 
+            <lightning-record-form record-id={accId}
+                 object-api-name="Account" 
+                 columns="2"
+                 fields={fields}
+                 onsubmit={handleSubmit}
+                 mode="edit"></lightning-record-form>
+        </div>
+    </lightning-card>
+</template>
